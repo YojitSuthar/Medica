@@ -1,6 +1,4 @@
-
-import '../screens/auth_screens/auth.dart';
-import '../screens/patient_screens/patient.dart';
+import '../screens/patient_module/patient.dart';
 import '../screens/screens.dart';
 import 'import_resources.dart';
 
