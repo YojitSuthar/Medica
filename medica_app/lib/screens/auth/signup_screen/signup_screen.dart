@@ -112,7 +112,7 @@ class SignupScreen extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 30).r,
                     child: Center(
                       child: RichTxt(
-                        style_1: Theme.of(context).textTheme.titleMedium!,
+                        style_1: Theme.of(context).textTheme.titleMedium!.copyWith(color: myColorsExtension.greyColor),
                         style_2: Theme.of(context)
                             .textTheme
                             .titleMedium!

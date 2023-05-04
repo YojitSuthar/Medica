@@ -41,6 +41,6 @@ final List<GetPage<dynamic>> routes = [
       page: () => HomePage(),
       transition: Transition.fade,
       transitionDuration: const Duration(milliseconds: 350)),
-  GetPage(name: "/BookAppointment", page: () =>  const BookAppointment()),
+  GetPage(name: "/BookAppointment", page: () =>  BookAppointment()),
   GetPage(name: "/PatientDetail", page: () =>  const PatientDetail()),
 ];

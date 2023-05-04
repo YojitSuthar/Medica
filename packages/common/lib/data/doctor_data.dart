@@ -2,39 +2,6 @@
 import 'package:medica_assets/gen/assets.gen.dart';
 class DoctorData{
 
-  static List<Map<String, dynamic>> doctorData = [
-    {
-      "Name": "Dr. Travis Westaby",
-      "Image": MyMedicaAssets.images.doctor1.keyName,
-      "work": "Cardiologist"
-    },
-    {
-      "Name": "Dr. Jenny Watson",
-      "Image": MyMedicaAssets.images.doctor2.keyName,
-      "work": "Dermatologists "
-    },
-    {
-      "Name": "Dr. Drake Boeson",
-      "Image": MyMedicaAssets.images.doctor3.keyName,
-      "work": "Nutritionist "
-    },
-    {
-      "Name": "Dr. Rodolfo Goode",
-      "Image": MyMedicaAssets.images.doctor4.keyName,
-      "work": "Ophthalmologist"
-    },
-    {
-      "Name": "Dr. Bernard Bliss Goode",
-      "Image": MyMedicaAssets.images.doctor5.keyName,
-      "work": "Radiologist "
-    },
-    {
-      "Name": "Dr. Rodolfo Goode",
-      "Image": MyMedicaAssets.images.doctor6.keyName,
-      "work": "Ophthalmologist"
-    },
-  ];
-
   static final List doctorCategory = [
     "All",
     "General",
@@ -55,36 +22,42 @@ class DoctorData{
       'Name' : 'Dr. Jerome Bell',
       'Special': 'Cardiologist',
       'Reviews': ' 4.9 (4821 reviews)',
+      "work": "Cardiologist"
     },
     {
       'Image' : MyMedicaAssets.images.doctor2.keyName,
       'Name' : 'Dr. Jenny Wilson',
       'Special': 'Dermatologists',
       'Reviews': ' 4.8 (3721 reviews)',
+      "work": "Dermatologists "
     },
     {
       'Image' : MyMedicaAssets.images.doctor3.keyName,
       'Name' : 'Dr. Albert Flores',
       'Special': 'Pediatric',
       'Reviews': ' 4.8 (3921 reviews)',
+      "work": "Nutritionist "
     },
     {
       'Image' : MyMedicaAssets.images.doctor4.keyName,
       'Name' : 'Dr. Jane Cooper',
       'Special': 'Neurologist',
       'Reviews': ' 4.9 (4921 reviews)',
+      "work": "Ophthalmologist"
     },
     {
       'Image' : MyMedicaAssets.images.doctor5.keyName,
       'Name' :'Dr. Ralph Edwards',
       'Special': 'Dentist',
       'Reviews': ' 4.7 (2921 reviews)',
+      "work": "Radiologist "
     },
     {
       'Image' : MyMedicaAssets.images.doctor6.keyName,
       'Name' :'Dr. Darrell Steward',
       'Special': 'Nutritionist',
       'Reviews': ' 4.8 (2521 reviews)',
+      "work": "Ophthalmologist"
     },
   ];
 

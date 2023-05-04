@@ -3,16 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:medica_app/resources/import_resources.dart';
 import '../../../../../../provider/provider.dart';
 
-class BookAppointment extends StatefulWidget {
-  const BookAppointment({Key? key}) : super(key: key);
+class BookAppointment extends StatelessWidget {
+  BookAppointment({Key? key}) : super(key: key);
 
-  @override
-  State<BookAppointment> createState() => _BookAppointmentState();
-}
-
-class _BookAppointmentState extends State<BookAppointment> {
   bool hour = false;
-  int currentIndex = 0;
+
   List<String> hourList = [
     '10.00 AM',
     '10.30 AM',
@@ -96,36 +91,38 @@ class _BookAppointmentState extends State<BookAppointment> {
                       childAspectRatio: 0.9 / 0.3,
                     ),
                     itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            currentIndex = index;
-                          });
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20).w,
-                            border: Border.all(
-                              color: myColorsExtension.onPrimary,
-                            ),
-                            color: (currentIndex == index)
-                                ? myColorsExtension.onPrimary
-                                : myColorsExtension.whiteColor,
-                          ),
-                          child: Center(
-                            child: Text(
-                              hourList[index],
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                    color: currentIndex == index
+                      return Consumer<HourProvider>(
+                        builder: (context,value,child) {
+                          return  GestureDetector(
+                            onTap: () {
+                              value.hourChange(index);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20).w,
+                                border: Border.all(
+                                  color: myColorsExtension.onPrimary,
+                                ),
+                                color: (value.currentIndex == index)
+                                    ? myColorsExtension.onPrimary
+                                    : myColorsExtension.whiteColor,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  hourList[index],
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .labelLarge!
+                                      .copyWith(
+                                    color: value.currentIndex == index
                                         ? myColorsExtension.whiteColor
                                         : myColorsExtension.onPrimary,
                                   ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       );
                     },
                   ),

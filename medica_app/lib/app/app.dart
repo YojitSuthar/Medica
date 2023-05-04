@@ -1,5 +1,6 @@
 import 'package:common/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:medica_app/provider/book_appointment/hour_select.dart';
 import 'package:medica_app/resources/route_manager.dart';
 import 'package:medica_app/screens/screens.dart';
 import '../provider/provider.dart';
@@ -18,6 +19,7 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ButtonProvider()),
         ChangeNotifierProvider(create: (context) => DropDown()),
         ChangeNotifierProvider(create: (context) => PickDateProvider()),
+        ChangeNotifierProvider(create: (context) => HourProvider()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
