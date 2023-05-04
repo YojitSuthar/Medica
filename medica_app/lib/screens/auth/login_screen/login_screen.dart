@@ -91,19 +91,13 @@ class LoginScreen extends StatelessWidget {
                       child: RichTxt(
                         text_1: 'Don\'t have an account? ',
                         text_2: ' Sign up',
-                        onTap: () {
-                          Get.toNamed("/SignupScreen");
-                        },
-                        style_1: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(color: myColorsExtension.greyColor),
+                        style_1: Theme.of(context).textTheme.titleMedium!,
                         style_2: Theme.of(context)
                             .textTheme
                             .titleMedium!
-                            .copyWith(
-                                color: myColorsExtension.font_blue,
-                                fontWeight: FontWeight.bold),
+                            .copyWith(color: myColorsExtension.font_blue,fontWeight: FontWeight.bold), onPress: () {
+                        Get.toNamed("/SignupScreen");
+                      },
                       ),
                     ),
                   ),

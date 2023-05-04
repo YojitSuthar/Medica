@@ -65,14 +65,36 @@ class SignupScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         const CheckBoxWidget(),
-                        SizedBox(
-                          width: 280.w,
-                          child: Text(
-                            "Accept Terms & Condition and Privacy Policy",
-                            // textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                        )
+                        RichTxt(
+                          text_1: 'Accept',
+                          text_2: ' Terms & Condition',
+                          onPress: () {},
+                          style_1: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(color: myColorsExtension.greyColor),
+                          style_2: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  color: myColorsExtension.font_blue,
+                                  fontWeight: FontWeight.bold),
+                        ),
+                        RichTxt(
+                          text_1: ' and ',
+                          text_2: 'Privacy policy',
+                         onPress: () {},
+                          style_1: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(color: myColorsExtension.greyColor),
+                          style_2: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                              color: myColorsExtension.font_blue,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
                   ),
@@ -99,7 +121,7 @@ class SignupScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold),
                         text_1: 'Already have an account?',
                         text_2: ' Sign in',
-                        onTap: () {
+                        onPress: () {
                           Get.toNamed("/LoginScreen");
                         },
                       ),

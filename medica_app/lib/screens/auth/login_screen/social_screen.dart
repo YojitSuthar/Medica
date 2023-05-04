@@ -94,7 +94,7 @@ class SocialScreen extends StatelessWidget {
                           .textTheme
                           .titleMedium!
                           .copyWith(color: myColorsExtension.font_blue,fontWeight: FontWeight.bold),
-                      onTap: () {
+                      onPress: () {
                         Get.toNamed("/SignupScreen");
                       },
                     ),
