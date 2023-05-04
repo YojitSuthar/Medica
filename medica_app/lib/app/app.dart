@@ -18,6 +18,7 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ButtonProvider()),
         ChangeNotifierProvider(create: (context) => DropDown()),
         ChangeNotifierProvider(create: (context) => PickDateProvider()),
+        ChangeNotifierProvider(create: (context) => WebViewLoading()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),

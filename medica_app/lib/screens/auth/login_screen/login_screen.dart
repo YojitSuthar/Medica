@@ -10,6 +10,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -53,13 +55,12 @@ class LoginScreen extends StatelessWidget {
                           onTap: () {
                             Get.toNamed('/ForgetPassword');
                           },
-                          child: Text("Forgot Password?",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      color: myColorsExtension.primary)),
+                          child: Text(
+                            "Forgot Password?",
+                            style: textDesign.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: myColorsExtension.primary),
+                          ),
                         ),
                       ),
                     ],
@@ -91,13 +92,16 @@ class LoginScreen extends StatelessWidget {
                       child: RichTxt(
                         text_1: 'Don\'t have an account? ',
                         text_2: ' Sign up',
-                        style_1: Theme.of(context).textTheme.titleMedium!,
+                        style_1: Theme.of(context).textTheme.titleMedium!.copyWith(color: myColorsExtension.greyColor),
                         style_2: Theme.of(context)
                             .textTheme
                             .titleMedium!
-                            .copyWith(color: myColorsExtension.font_blue,fontWeight: FontWeight.bold), onPress: () {
-                        Get.toNamed("/SignupScreen");
-                      },
+                            .copyWith(
+                                color: myColorsExtension.font_blue,
+                                fontWeight: FontWeight.bold),
+                        onPress: () {
+                          Get.toNamed("/SignupScreen");
+                        },
                       ),
                     ),
                   ),

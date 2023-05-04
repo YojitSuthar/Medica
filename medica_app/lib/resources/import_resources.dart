@@ -9,3 +9,4 @@ export 'package:date_picker_timeline/date_picker_widget.dart';
 export 'package:buttons_tabbar/buttons_tabbar.dart';
 export 'package:flutter_share/flutter_share.dart';
 export 'package:flutter_spinkit/flutter_spinkit.dart';
+export 'package:webview_flutter/webview_flutter.dart';
