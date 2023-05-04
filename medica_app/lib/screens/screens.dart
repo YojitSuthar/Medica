@@ -1,3 +1,4 @@
-export 'splash_screen/splash_screen.dart';
-export 'on_boarding_screens/on_boarding_screen.dart';
-export 'on_boarding_screens/intro_screen.dart';
+export 'splash/splash_screen.dart';
+export 'on_boarding/intro_screen.dart';
+export 'on_boarding/on_boarding_screen.dart';
+export 'auth/auth.dart';

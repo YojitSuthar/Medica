@@ -275,7 +275,7 @@ class DoctorProfile extends StatelessWidget {
   Container doctorCard() {
     return Container(
       decoration: BoxDecoration(
-        color: myColorsExtension.whiteColor,
+        color: myColorsExtension.whiteColor                                                                                                                                  ,
         borderRadius: BorderRadius.circular(20).w,
         border: Border.all(
           color: myColorsExtension.greyColor,
