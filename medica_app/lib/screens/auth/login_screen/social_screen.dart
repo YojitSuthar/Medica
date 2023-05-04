@@ -36,7 +36,7 @@ class SocialScreen extends StatelessWidget {
                       MyMedicaAssets.images.socialImage.image(height: 200.h),
                       Text(
                         "Let's you in",
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 28.sp,fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25.sp,fontWeight: FontWeight.bold),
                       )
                     ],
                   ),

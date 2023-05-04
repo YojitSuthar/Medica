@@ -18,48 +18,57 @@ class LoginScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
+        appBar: const WidgetAppBar(title: " "),
         body: SafeArea(
           child: SingleChildScrollView(
             physics: const NeverScrollableScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.all(15).w,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BackIconButton(),
                   const CompanyLoginDesign(
-                    label: "Login to your account",
+                    label: "Welcome back!",
                   ),
                   NormalTextFiled(
                     readOnly: false,
                     prefixIcon:
-                        MyMedicaAssets.icons.mailInboxApp.image(height: 28.h),
+                        MyMedicaAssets.icons.mailInboxApp.image(height: 26.h),
                     topPadding: 0,
                     leftPadding: 0,
                     hintText: "Email",
                     controller: emailCtrl,
                   ),
-                  PassField(
-                    hintText: "Password",
-                    iconAsset:
-                        MyMedicaAssets.icons.lockedPadlock.image(height: 20.h),
-                    textPassCtrl: passwordCtrl,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const CheckBoxWidget(),
-                      Text(
-                        "Remember me",
-                        style: Theme.of(context).textTheme.titleSmall,
-                      )
+                      PassField(
+                        hintText: "Password",
+                        iconAsset: MyMedicaAssets.icons.lockedPadlock
+                            .image(height: 20.h),
+                        textPassCtrl: passwordCtrl,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5).r,
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed('/ForgetPassword');
+                          },
+                          child: Text("Forgot Password?",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall!
+                                  .copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: myColorsExtension.primary)),
+                        ),
+                      ),
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10).r,
+                    padding: const EdgeInsets.only(top: 30).r,
                     child: BlueButton(
                       height: 45,
-                      width: 400,
+                      width: 310,
                       onPressed: () {
                         if (emailCtrl.text.contains("@medicadoctor.com")) {
                           Get.offAllNamed("/UserFillProfile");
@@ -71,73 +80,30 @@ class LoginScreen extends StatelessWidget {
                         }
                       },
                       borderRadius: 30,
-                      child: const Text("Sign in",),
+                      child: const Text(
+                        "Sign in",
+                      ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10).r,
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.toNamed('/ForgetPassword');
-                      },
-                      child: Center(
-                          child: Text(
-                        "Forget the Password?",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!.copyWith(fontWeight: FontWeight.w500,color: myColorsExtension.primary)
-                      )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25, bottom: 25),
-                    child: Row(children: [
-                      Expanded(
-                        child: Container(
-                            margin:
-                                const EdgeInsets.only(left: 10.0, right: 20.0)
-                                    .r,
-                            child: const Divider(
-                              thickness: 1,
-                            )),
-                      ),
-                      const Text("Or continue with",),
-                      Expanded(
-                        child: Container(
-                            margin:
-                                const EdgeInsets.only(left: 20.0, right: 10.0)
-                                    .r,
-                            child: const Divider(
-                              thickness: 1,
-                            )),
-                      ),
-                    ]),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      BoxSigninOption(
-                        iconAsset: MyMedicaAssets.icons.facebook.image(),
-                      ),
-                      BoxSigninOption(
-                        iconAsset: MyMedicaAssets.icons.google.image(),
-                      ),
-                    ],
-                  ),
-                    Container(
-                    margin: const EdgeInsets.only(top: 10, bottom: 10).r,
+                  Container(
+                    margin: const EdgeInsets.only(top: 30, bottom: 10).r,
                     child: Center(
                       child: RichTxt(
-                        text_1: 'Don\'t have any account? ',
+                        text_1: 'Don\'t have an account? ',
                         text_2: ' Sign up',
                         onTap: () {
                           Get.toNamed("/SignupScreen");
                         },
-                        style_1: Theme.of(context).textTheme.titleMedium!,
+                        style_1: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(color: myColorsExtension.greyColor),
                         style_2: Theme.of(context)
                             .textTheme
                             .titleMedium!
-                            .copyWith(color: myColorsExtension.font_blue,fontWeight: FontWeight.bold),
+                            .copyWith(
+                                color: myColorsExtension.font_blue,
+                                fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),

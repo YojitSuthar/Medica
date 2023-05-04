@@ -19,13 +19,17 @@ class CompanyLoginDesign extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-                height: 130.h,
-                child:  MyMedicaAssets.images.companyLogo.image(),),
+              height: 130.h,
+              child: MyMedicaAssets.images.companyLogo.image(),),
 
             Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Text(label,style: TextStyle(fontSize: 22.sp),),
-            )
+              child: Text(label, style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(fontSize: 20.sp, fontWeight: FontWeight.w600)),
+            ),
 
           ],
         ),

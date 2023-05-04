@@ -19,6 +19,7 @@ class SignupScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
+        appBar: const WidgetAppBar(title: " "),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -26,7 +27,7 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BackIconButton(),
+
                   const CompanyLoginDesign(
                     label: "Sign Up",
                   ),

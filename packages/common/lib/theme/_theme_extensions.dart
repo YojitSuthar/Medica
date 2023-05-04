@@ -66,13 +66,10 @@ MyMedicaColors myColorsExtension = const MyMedicaColors(
   font_blue: Color(0xFF0060FF),
   transparent: Colors.transparent,
   background_grey_color: Color.fromRGBO(238, 238, 238, 1),
-  def_border_color: Color.fromRGBO(189, 189, 189, 1),
-  //shade400
+  def_border_color: Color.fromRGBO(189, 189, 189, 1), //shade400
   btn_border_color: Colors.blueAccent,
-  textfilled_border_color: Color.fromRGBO(238, 238, 238, 1),
-  //shade200
-  card_border_color: Color.fromRGBO(224, 224, 224, 1),
-  //shade300
+  textfilled_border_color: Color.fromRGBO(238, 238, 238, 1), //shade200
+  card_border_color: Color.fromRGBO(224, 224, 224, 1), //shade300
   whiteColor: Colors.white,
 );
 

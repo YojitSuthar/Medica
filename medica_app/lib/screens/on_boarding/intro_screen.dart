@@ -19,35 +19,39 @@ class IntroScreen extends StatelessWidget {
               children: [
                 MyMedicaAssets.icons.doctor.image(fit: BoxFit.fill),
                 Text(
-                  "Welcome to\n Medica! 👋",
+                  "Medica! 👋",
                   style: Theme.of(context)
                       .textTheme
                       .headlineLarge!
-                      .copyWith(color: myColorsExtension.primary),
+                      .copyWith(color: myColorsExtension.primary,fontSize: 31.sp),
                 ),
                 Container(
                   padding: EdgeInsets.all(30.w),
                   child: Text(
-                    "The best online doctor appointment & consultation app of the century for yout health and medical needs!",
+                    "The best online doctor appointment & consultation app of the century for your health and medical needs!",
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
-                        .copyWith(fontWeight: FontWeight.w400),
+                        .copyWith(fontWeight: FontWeight.w500,color: myColorsExtension.greyColor),
                   ),
                 ),
-                BlueButton(
-                  height: 50,
-                  width: 170,
-                  onPressed: () {
-                    Get.toNamed("/OnBoardingScreen");
-                  },
-                  borderRadius: 20,
-                  child: const Text("Continue"),
-                )
+
               ],
             ),
           ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
+        child: BlueButton(
+          height: 45,
+          width: 310,
+          onPressed: () {
+            Get.toNamed("/OnBoardingScreen");
+          },
+          borderRadius: 20,
+          child: const Text("Continue"),
         ),
       ),
     );
