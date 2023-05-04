@@ -211,7 +211,7 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/boardingimg_3.png
   AssetGenImage get boardingimg3 =>
-      const AssetGenImage('assets/images/boardingimg_3.png');
+      const AssetGenImage('assets/images/boarding_3.jpeg');
 
   /// File path: assets/images/company-logo.png
   AssetGenImage get companyLogo =>

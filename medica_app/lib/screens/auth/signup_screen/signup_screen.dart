@@ -28,23 +28,26 @@ class SignupScreen extends StatelessWidget {
                 children: [
                   const BackIconButton(),
                   const CompanyLoginDesign(
-                    label: "Create new account",
+                    label: "Sign Up",
                   ),
                   NormalTextFiled(
-                    prefixIcon: MyMedicaAssets.icons.mailInboxApp.image(
-                      height: 24.h,
-                      color: myColorsExtension.greyColor,
-                    ),
                     topPadding: 0,
-                    leftPadding: 10,
-                    hintText: "Username",
+                    leftPadding: 0,
+                    hintText: "First Name",
+                    controller: usernameCtrl,
+                    readOnly: false,
+                  ),
+                  NormalTextFiled(
+                    topPadding: 0,
+                    leftPadding: 0,
+                    hintText: "Last Name",
                     controller: usernameCtrl,
                     readOnly: false,
                   ),
                   NormalTextFiled(
                     readOnly: false,
                     prefixIcon:
-                        MyMedicaAssets.icons.mailInboxApp.image(height: 28.h),
+                        MyMedicaAssets.icons.mailInboxApp.image(height: 26.h),
                     topPadding: 0,
                     leftPadding: 0,
                     hintText: "Email",
@@ -56,15 +59,21 @@ class SignupScreen extends StatelessWidget {
                         MyMedicaAssets.icons.lockedPadlock.image(height: 20.h),
                     textPassCtrl: passwordCtrl,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const CheckBoxWidget(),
-                      Text(
-                        "Remember me",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      )
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0).r,
+                    child: Row(
+                      children: [
+                        const CheckBoxWidget(),
+                        SizedBox(
+                          width: 280.w,
+                          child: Text(
+                            "Accept Terms & Condition and Privacy Policy",
+                            // textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15).r,
@@ -76,45 +85,8 @@ class SignupScreen extends StatelessWidget {
                       child: const Text("Sign up"),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25, bottom: 25),
-                    child: Row(children: [
-                      Expanded(
-                        child: Container(
-                            margin:
-                                const EdgeInsets.only(left: 10.0, right: 20.0)
-                                    .r,
-                            child: Divider(
-                              color: myColorsExtension.onSecondary,
-                              thickness: 1,
-                            )),
-                      ),
-                      const Text("Or continue with"),
-                      Expanded(
-                        child: Container(
-                            margin:
-                                const EdgeInsets.only(left: 20.0, right: 10.0)
-                                    .r,
-                            child: Divider(
-                              thickness: 1,
-                              color: myColorsExtension.onSecondary,
-                            )),
-                      ),
-                    ]),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      BoxSigninOption(
-                        iconAsset: MyMedicaAssets.icons.facebook.image(),
-                      ),
-                      BoxSigninOption(
-                        iconAsset: MyMedicaAssets.icons.google.image(),
-                      ),
-                    ],
-                  ),
                   Container(
-                    margin: const EdgeInsets.only(top: 20).r,
+                    margin: const EdgeInsets.only(top: 30).r,
                     child: Center(
                       child: RichTxt(
                         style_1: Theme.of(context).textTheme.titleMedium!,

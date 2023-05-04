@@ -15,7 +15,7 @@ class SignInOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 45.h,
-      padding: EdgeInsets.only(left: 75.r),
+      padding: EdgeInsets.only(left: 20.r),
       margin: const EdgeInsets.only(top: 15).r,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.w),
@@ -24,12 +24,13 @@ class SignInOption extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           icon,
-          Container(
-              margin: const EdgeInsets.only(left: 10).r,
-              child: Text(
-                label,
-                style: Theme.of(context).textTheme.titleMedium,
-              ))
+          Padding(
+            padding: const EdgeInsets.only(left: 60).r,
+            child: Text(
+              label,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+          )
         ],
       ),
     );

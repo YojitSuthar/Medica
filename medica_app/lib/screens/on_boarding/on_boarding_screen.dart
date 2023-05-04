@@ -14,9 +14,24 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(15).w,
+          padding: const EdgeInsets.symmetric(horizontal: 15).w,
           child: Column(
             children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: TextButton(
+                  onPressed: () {
+                    Get.offAllNamed("/SocialScreen");
+                  },
+                  child: Text(
+                    'SKIP',
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                          color: myColorsExtension.primary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+              ),
               Expanded(
                 child: PageView(
                   onPageChanged: (index) {
@@ -33,8 +48,11 @@ class OnBoardingScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: Theme.of(context)
                               .textTheme
-                              .headlineMedium
-                              ?.copyWith(color: myColorsExtension.primary),
+                              .headlineSmall
+                              ?.copyWith(
+                                color: myColorsExtension.primary,
+                                fontSize: 25.sp,
+                              ),
                         )
                       ],
                     ),
@@ -48,7 +66,10 @@ class OnBoardingScreen extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .headlineMedium!
-                              .copyWith(color: myColorsExtension.primary),
+                              .copyWith(
+                                color: myColorsExtension.primary,
+                                fontSize: 25.sp,
+                              ),
                         )
                       ],
                     ),
@@ -62,7 +83,10 @@ class OnBoardingScreen extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .headlineMedium!
-                              .copyWith(color: myColorsExtension.primary),
+                              .copyWith(
+                                color: myColorsExtension.primary,
+                                fontSize: 25.sp,
+                              ),
                         )
                       ],
                     ),
@@ -80,10 +104,10 @@ class OnBoardingScreen extends StatelessWidget {
               ),
               Consumer<ButtonProvider>(builder: (context, value, child) {
                 return Padding(
-                  padding: const EdgeInsets.only(top: 40),
+                  padding: const EdgeInsets.only(top: 40,bottom: 20),
                   child: BlueButton(
                     height: 45,
-                    width: 400,
+                    width: 310,
                     onPressed: value.change
                         ? () {
                             Get.offAllNamed("/SocialScreen");

@@ -8,7 +8,7 @@ class SocialScreen extends StatelessWidget {
 
   List<Map<String, dynamic>> signinOption = [
     {
-      "iconAsset": MyMedicaAssets.icons.facebook.image(height: 25.h),
+      "iconAsset": MyMedicaAssets.icons.facebook.image(height: 27.h),
       "label": "Continue with Facebook"
     },
     {
@@ -36,7 +36,7 @@ class SocialScreen extends StatelessWidget {
                       MyMedicaAssets.images.socialImage.image(height: 200.h),
                       Text(
                         "Let's you in",
-                        style: TextStyle(fontSize: 35.sp),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 28.sp,fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -84,12 +84,12 @@ class SocialScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 10, bottom: 30).r,
+                  margin: const EdgeInsets.only(top: 30, bottom: 30).r,
                   child: Center(
                     child: RichTxt(
                       text_1: 'Don\'t have an account?',
                       text_2: ' Sign up',
-                      style_1: Theme.of(context).textTheme.titleMedium!,
+                      style_1: Theme.of(context).textTheme.titleMedium!.copyWith(color: myColorsExtension.greyColor),
                       style_2: Theme.of(context)
                           .textTheme
                           .titleMedium!
