@@ -22,8 +22,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textDesign = Theme.of(context).textTheme;
-
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -42,7 +40,7 @@ class HomePage extends StatelessWidget {
                   CircleAvatar(
                     radius: 25,
                     backgroundImage:
-                        AssetImage(MyMedicaAssets.images.profile.keyName),
+                    AssetImage(MyMedicaAssets.images.profile.keyName),
                   ),
                   Container(
                     height: 40.h,
@@ -53,15 +51,17 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           "Good morning 👋",
-                          style: textDesign
+                          style: Theme.of(context)
+                              .textTheme
                               .titleMedium!
                               .copyWith(
-                                  color: myColorsExtension.greyColor,
-                                  fontWeight: FontWeight.w500),
+                              color: myColorsExtension.greyColor,
+                              fontWeight: FontWeight.w500),
                         ),
                         Text(
                           "Andrew Ashely",
-                          style: textDesign
+                          style: Theme.of(context)
+                              .textTheme
                               .titleLarge!
                               .copyWith(fontSize: 15.sp),
                         )
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                       Get.toNamed("/NotificationScreen");
                     },
                     iconAsset:
-                        MyMedicaAssets.icons.notification.image(height: 21.h)),
+                    MyMedicaAssets.icons.notification.image(height: 21.h)),
                 IcnButton(
                     onPressed: () {
                       Get.toNamed("/WishListScreen");
@@ -195,57 +195,31 @@ class HomePage extends StatelessWidget {
                         itemCount: doctorSpeciality.length,
                         gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
-                      mainAxisSpacing: 1,
-                      crossAxisSpacing: 35,
-                      childAspectRatio: 0.55,
-                    ),
-                    itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 40,
-                            backgroundColor: myColorsExtension.secondary,
-                            child: Image.asset(
-                              doctorSpeciality[index]["icon"].toString(),
-                              color: myColorsExtension.primary,
-                              height: 28.h,
-                            ),
-                          ),
-                          Center(
-                            child: DesignText(
-                              style: textDesign
-                                  .titleMedium!
-                                  .copyWith(
+                          crossAxisCount: 4,
+                          mainAxisSpacing: 1,
+                          crossAxisSpacing: 35,
+                          childAspectRatio: 0.55,
+                        ),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                radius: 40,
+                                backgroundColor: myColorsExtension.secondary,
+                                child: Image.asset(
+                                  doctorSpeciality[index]["icon"].toString(),
+                                  color: myColorsExtension.primary,
+                                  height: 28.h,
+                                ),
+                              ),
+                              Center(
+                                child: DesignText(
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 15.sp),
-                              text: doctorSpeciality[index]["label"].toString(),
-                              padding: 5,
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      DesignText(
-                          style: textDesign
-                              .titleMedium!
-                              .copyWith(
-                                  fontWeight: FontWeight.w600, fontSize: 18.sp),
-                          text: "Top Doctors",
-                          padding: 10),
-                      GestureDetector(
-                        onTap: () {
-                          Get.toNamed("/TopDoctorScreen");
-                        },
-                        child: DesignText(
-                            style: textDesign
-                                .titleMedium!
-                                .copyWith(
                                       fontSize: 13.sp),
                                   text: doctorSpeciality[index]["label"].toString(),
                                   padding: 5,
@@ -333,10 +307,10 @@ class HomePage extends StatelessWidget {
                                                     .toString()),
                                                 fit: BoxFit.cover),
                                             borderRadius: BorderRadius.only(
-                                                    topLeft:
-                                                        const Radius.circular(8).w,
-                                                    topRight:
-                                                        const Radius.circular(8).w)
+                                                topLeft:
+                                                const Radius.circular(8).w,
+                                                topRight:
+                                                const Radius.circular(8).w)
                                                 .r),
                                       ),
                                       SizedBox(
@@ -347,10 +321,10 @@ class HomePage extends StatelessWidget {
                                                   .textTheme
                                                   .titleMedium!
                                                   .copyWith(
-                                                      fontWeight: FontWeight.w600,
-                                                      fontSize: 13.sp),
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 13.sp),
                                               text: DoctorData.topDoctor[index]
-                                                      ["Name"]
+                                              ["Name"]
                                                   .toString(),
                                               padding: 5),
                                         ),
@@ -360,12 +334,12 @@ class HomePage extends StatelessWidget {
                                               .textTheme
                                               .titleMedium!
                                               .copyWith(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 11.sp,
-                                                  color:
-                                                      myColorsExtension.greyColor),
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 11.sp,
+                                              color:
+                                              myColorsExtension.greyColor),
                                           text: DoctorData.topDoctor[index]
-                                                  ["Special"]
+                                          ["Special"]
                                               .toString(),
                                           padding: 0),
                                     ],
@@ -397,8 +371,6 @@ class SliderData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textDesign = Theme.of(context).textTheme;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -414,7 +386,7 @@ class SliderData extends StatelessWidget {
           margin: EdgeInsets.only(top: 10.r),
           child: Text(
             "Check you health Condition regularly to minimize the incidence of the disease in future.",
-            style: textDesign.titleSmall?.copyWith(
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
                 fontSize: 14.sp, color: myColorsExtension.secondary),
           ),
         ),
@@ -428,7 +400,7 @@ class SliderData extends StatelessWidget {
             onPressed: () {},
             child: Text(
               "Check Now",
-              style: textDesign.bodyLarge!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontWeight: FontWeight.w700,
                   color: myColorsExtension.onPrimary),
             ),
