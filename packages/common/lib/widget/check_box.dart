@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class CheckBoxWidget extends StatefulWidget {
@@ -14,13 +15,15 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Transform.scale(
-      scale: 1.1  ,
+    return SizedBox(
+      height: 40.h,
+      width: 19.w,
       child: Checkbox(
         activeColor: myColorsExtension.onPrimary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         checkColor: Colors.white,
         value: isChecked,
+        // visualDensity: VisualDensity(horizontal: -4, vertical: -4),
         onChanged: (bool? value) {
           setState(() {
             isChecked = value!;

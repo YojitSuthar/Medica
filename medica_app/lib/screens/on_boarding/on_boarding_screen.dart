@@ -24,7 +24,7 @@ class OnBoardingScreen extends StatelessWidget {
                     Get.offAllNamed("/SocialScreen");
                   },
                   child: Text(
-                    'SKIP',
+                    'Skip',
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           color: myColorsExtension.primary,
                           fontWeight: FontWeight.w600,

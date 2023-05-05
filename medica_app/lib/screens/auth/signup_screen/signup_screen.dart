@@ -67,7 +67,7 @@ class SignupScreen extends StatelessWidget {
                       children: [
                         const CheckBoxWidget(),
                         RichTxt(
-                          text_1: 'Accept',
+                          text_1: ' Accept',
                           text_2: ' Terms & Condition',
                           onPress: () {
                             Get.to(
@@ -78,14 +78,14 @@ class SignupScreen extends StatelessWidget {
                           },
                           style_1: Theme.of(context)
                               .textTheme
-                              .bodyMedium!
-                              .copyWith(color: myColorsExtension.greyColor),
+                              .bodySmall!
+                              .copyWith(color: myColorsExtension.greyColor,fontSize: 12.sp,),
                           style_2: Theme.of(context)
                               .textTheme
-                              .bodyMedium!
+                              .bodySmall!
                               .copyWith(
                                   color: myColorsExtension.font_blue,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,fontSize: 12.sp,),
                         ),
                         RichTxt(
                           text_1: ' and ',
@@ -99,14 +99,14 @@ class SignupScreen extends StatelessWidget {
                           },
                           style_1: Theme.of(context)
                               .textTheme
-                              .bodyMedium!
-                              .copyWith(color: myColorsExtension.greyColor),
+                              .bodySmall!
+                              .copyWith(color: myColorsExtension.greyColor,fontSize: 12.sp,),
                           style_2: Theme.of(context)
                               .textTheme
-                              .bodyMedium!
+                              .bodySmall!
                               .copyWith(
                                   color: myColorsExtension.font_blue,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,fontSize: 12.sp,),
                         ),
                       ],
                     ),

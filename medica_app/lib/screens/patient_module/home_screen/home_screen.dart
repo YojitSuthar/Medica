@@ -4,23 +4,10 @@ import 'package:medica_app/resources/import_resources.dart';
 import 'package:medica_assets/medica_assets.dart';
 import '../patient.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  HomePage({Key? key}) : super(key: key);
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   final PageController controller = PageController();
-
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   List<Map<String, dynamic>> doctorSpeciality = [
     {"label": "General", "icon": MyMedicaAssets.icons.people.keyName},
@@ -371,33 +358,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: myColorsExtension.whiteColor,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
-              label: 'Appointment',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.article),
-              label: 'Article',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _selectedIndex,
-          selectedItemColor: myColorsExtension.onPrimary,
-          unselectedItemColor: myColorsExtension.greyColor,
-          iconSize: 30,
-          onTap: _onItemTapped,
-        ),
+
       ),
     );
   }

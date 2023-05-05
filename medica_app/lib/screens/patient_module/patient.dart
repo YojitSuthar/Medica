@@ -8,3 +8,4 @@ export 'doctor_profile/doctor_review.dart';
 export 'doctor_profile/doctor_profile.dart';
 export 'doctor_profile/book_appointment.dart';
 export 'doctor_profile/patient_detail.dart';
+export 'dashboard/dashboard_screen.dart';
