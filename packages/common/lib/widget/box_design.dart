@@ -82,7 +82,7 @@ class BoxDesign extends StatelessWidget {
                       style: Theme
                           .of(context)
                           .textTheme
-                          .titleMedium!
+                          .titleMedium!.copyWith(fontSize: 13.sp)
                           .copyWith(color: myColorsExtension.greyColor),
 
                       text: work,

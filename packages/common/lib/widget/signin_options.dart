@@ -24,13 +24,12 @@ class SignInOption extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           icon,
-          Padding(
-            padding: const EdgeInsets.only(left: 60).r,
-            child: Text(
-              label,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          )
+          const Spacer(),
+          Text(
+            label,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const Spacer(),
         ],
       ),
     );

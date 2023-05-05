@@ -3,16 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:medica_app/resources/import_resources.dart';
 import '../../../../../../provider/provider.dart';
 
-class BookAppointment extends StatefulWidget {
-  const BookAppointment({Key? key}) : super(key: key);
+class BookAppointment extends StatelessWidget {
+  BookAppointment({Key? key}) : super(key: key);
 
-  @override
-  State<BookAppointment> createState() => _BookAppointmentState();
-}
-
-class _BookAppointmentState extends State<BookAppointment> {
   bool hour = false;
-  int currentIndex = 0;
+
   List<String> hourList = [
     '10.00 AM',
     '10.30 AM',
@@ -30,8 +25,6 @@ class _BookAppointmentState extends State<BookAppointment> {
 
   @override
   Widget build(BuildContext context) {
-    final textDesign = Theme.of(context).textTheme;
-
     return Scaffold(
       appBar: const WidgetAppBar(
         title: "Book Appointment",
@@ -45,7 +38,7 @@ class _BookAppointmentState extends State<BookAppointment> {
               children: [
                 Text(
                   'Make Appointment',
-                  style: textDesign.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Consumer<PickDateProvider>(
                   builder: (context, value, child) {
@@ -64,12 +57,12 @@ class _BookAppointmentState extends State<BookAppointment> {
                           fontWeight: FontWeight.w600,
                         ),
                         dayTextStyle: TextStyle(
-                          color: myColorsExtension.greyColor,
+                          color: Colors.grey,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         monthTextStyle: TextStyle(
-                          color: myColorsExtension.greyColor,
+                          color: Colors.grey,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                         ),
@@ -82,7 +75,7 @@ class _BookAppointmentState extends State<BookAppointment> {
                 ),
                 Text(
                   'Select Hour',
-                  style: textDesign.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20).r,
@@ -98,35 +91,38 @@ class _BookAppointmentState extends State<BookAppointment> {
                       childAspectRatio: 0.9 / 0.3,
                     ),
                     itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            currentIndex = index;
-                          });
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20).w,
-                            border: Border.all(
-                              color: myColorsExtension.onPrimary,
-                            ),
-                            color: (currentIndex == index)
-                                ? myColorsExtension.onPrimary
-                                : myColorsExtension.whiteColor,
-                          ),
-                          child: Center(
-                            child: Text(
-                              hourList[index],
-                              style: textDesign
-                                  .labelLarge!
-                                  .copyWith(
-                                    color: currentIndex == index
+                      return Consumer<HourProvider>(
+                        builder: (context,value,child) {
+                          return  GestureDetector(
+                            onTap: () {
+                              value.hourChange(index);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20).w,
+                                border: Border.all(
+                                  color: myColorsExtension.onPrimary,
+                                ),
+                                color: (value.currentIndex == index)
+                                    ? myColorsExtension.onPrimary
+                                    : myColorsExtension.whiteColor,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  hourList[index],
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .labelLarge!
+                                      .copyWith(
+                                    color: value.currentIndex == index
                                         ? myColorsExtension.whiteColor
                                         : myColorsExtension.onPrimary,
                                   ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       );
                     },
                   ),

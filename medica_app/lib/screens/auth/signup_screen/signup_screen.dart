@@ -10,13 +10,9 @@ class SignupScreen extends StatelessWidget {
   final TextEditingController emailCtrl = TextEditingController();
   final TextEditingController passwordCtrl = TextEditingController();
   final TextEditingController usernameCtrl = TextEditingController();
-  final TextEditingController firstNameCtrl = TextEditingController();
-  final TextEditingController lastNameCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final textDesign = Theme.of(context).textTheme;
-
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -40,14 +36,14 @@ class SignupScreen extends StatelessWidget {
                     topPadding: 0,
                     leftPadding: 0,
                     hintText: "First Name",
-                    controller: firstNameCtrl,
+                    controller: usernameCtrl,
                     readOnly: false,
                   ),
                   NormalTextFiled(
                     topPadding: 0,
                     leftPadding: 0,
                     hintText: "Last Name",
-                    controller: lastNameCtrl,
+                    controller: usernameCtrl,
                     readOnly: false,
                   ),
                   NormalTextFiled(
@@ -71,7 +67,7 @@ class SignupScreen extends StatelessWidget {
                       children: [
                         const CheckBoxWidget(),
                         RichTxt(
-                          text_1: 'Accept',
+                          text_1: ' Accept',
                           text_2: ' Terms & Condition',
                           onPress: () {
                             Get.to(
@@ -80,33 +76,37 @@ class SignupScreen extends StatelessWidget {
                               duration: const Duration(milliseconds: 350),
                             );
                           },
-                          style_1:textDesign
-                              .bodyMedium!
-                              .copyWith(color: myColorsExtension.greyColor),
-                          style_2: textDesign
-                              .bodyMedium!
+                          style_1: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(color: myColorsExtension.greyColor,fontSize: 12.sp,),
+                          style_2: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
                               .copyWith(
                                   color: myColorsExtension.font_blue,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,fontSize: 12.sp,),
                         ),
                         RichTxt(
                           text_1: ' and ',
                           text_2: 'Privacy policy',
                           onPress: () {
                             Get.to(
-                              WebView(title: "Privacy policy",url: "https://www.zignuts.com/"),
+                              WebView(title: "Privacy policy",url: "https://github.com/YojitSuthar"),
                               transition: Transition.fade,
                               duration: const Duration(milliseconds: 350),
                             );
                           },
-                          style_1: textDesign
-                              .bodyMedium!
-                              .copyWith(color: myColorsExtension.greyColor),
-                          style_2: textDesign
-                              .bodyMedium!
+                          style_1: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(color: myColorsExtension.greyColor,fontSize: 12.sp,),
+                          style_2: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
                               .copyWith(
                                   color: myColorsExtension.font_blue,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,fontSize: 12.sp,),
                         ),
                       ],
                     ),
@@ -125,8 +125,9 @@ class SignupScreen extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 30).r,
                     child: Center(
                       child: RichTxt(
-                        style_1: textDesign.titleMedium!.copyWith(color: myColorsExtension.greyColor),
-                        style_2: textDesign
+                        style_1: Theme.of(context).textTheme.titleMedium!.copyWith(color: myColorsExtension.greyColor),
+                        style_2: Theme.of(context)
+                            .textTheme
                             .titleMedium!
                             .copyWith(
                                 color: myColorsExtension.font_blue,

@@ -158,7 +158,7 @@ class UserFillProfile extends StatelessWidget {
                       height: 45,
                       width: 400,
                       onPressed: () {
-                        Get.offAllNamed("/HomePage");
+                        Get.offAllNamed("/BottomNavigation");
                       },
                       borderRadius: 30,
                       child: const Text("Continue"),

@@ -48,20 +48,30 @@ class TopDoctorScreen extends StatelessWidget {
         length: tabs.length,
         child: Column(
           children: [
-            TabBarDesign(
-              tabs: tabs,
+            SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SizedBox(width: 15.w,),
+                  TabBarDesign(
+                    tabs: tabs,
+                  ),
+                  SizedBox(width: 15.w,),
+                ],
+              ),
             ),
             Expanded(
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                itemCount: DoctorData.doctorData.length,
+                itemCount: DoctorData.topDoctor.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(left: 15, right: 15).w,
                     child: BoxDesign(
-                      image: DoctorData.doctorData[index]["Image"],
-                      name: DoctorData.doctorData[index]["Name"].toString(),
-                      work: DoctorData.doctorData[index]["work"].toString(),
+                      image: DoctorData.topDoctor[index]["Image"],
+                      name: DoctorData.topDoctor[index]["Name"].toString(),
+                      work: DoctorData.topDoctor[index]["work"].toString(),
                     ),
                   );
                 },

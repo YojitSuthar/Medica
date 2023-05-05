@@ -32,7 +32,7 @@ class WishListScreen extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  itemCount: DoctorData.doctorData.length,
+                  itemCount: DoctorData.topDoctor.length,
                   itemBuilder: (BuildContext context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -41,9 +41,9 @@ class WishListScreen extends StatelessWidget {
                             context);
                       },
                       child: BoxDesign(
-                        image: DoctorData.doctorData[index]["Image"].toString(),
-                        name: DoctorData.doctorData[index]["Name"].toString(),
-                        work: DoctorData.doctorData[index]["work"].toString(),
+                        image: DoctorData.topDoctor[index]["Image"].toString(),
+                        name: DoctorData.topDoctor[index]["Name"].toString(),
+                        work: DoctorData.topDoctor[index]["work"].toString(),
                       ),
                     );
                   },
