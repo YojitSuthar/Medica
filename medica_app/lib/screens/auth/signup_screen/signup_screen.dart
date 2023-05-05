@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:medica_app/resources/import_resources.dart';
 import 'package:medica_assets/medica_assets.dart';
 
+import '../../screens.dart';
+
 class SignupScreen extends StatelessWidget {
   SignupScreen({Key? key}) : super(key: key);
   final TextEditingController emailCtrl = TextEditingController();
@@ -27,7 +29,6 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   const CompanyLoginDesign(
                     label: "Sign Up",
                   ),
@@ -68,7 +69,13 @@ class SignupScreen extends StatelessWidget {
                         RichTxt(
                           text_1: 'Accept',
                           text_2: ' Terms & Condition',
-                          onPress: () {},
+                          onPress: () {
+                            Get.to(
+                              WebView(title: "Terms and Conditions",url: "https://www.google.com/"),
+                              transition: Transition.fade,
+                              duration: const Duration(milliseconds: 350),
+                            );
+                          },
                           style_1: Theme.of(context)
                               .textTheme
                               .bodyMedium!
@@ -83,7 +90,13 @@ class SignupScreen extends StatelessWidget {
                         RichTxt(
                           text_1: ' and ',
                           text_2: 'Privacy policy',
-                         onPress: () {},
+                          onPress: () {
+                            Get.to(
+                              WebView(title: "Privacy policy",url: "https://github.com/YojitSuthar"),
+                              transition: Transition.fade,
+                              duration: const Duration(milliseconds: 350),
+                            );
+                          },
                           style_1: Theme.of(context)
                               .textTheme
                               .bodyMedium!
@@ -92,8 +105,8 @@ class SignupScreen extends StatelessWidget {
                               .textTheme
                               .bodyMedium!
                               .copyWith(
-                              color: myColorsExtension.font_blue,
-                              fontWeight: FontWeight.bold),
+                                  color: myColorsExtension.font_blue,
+                                  fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
