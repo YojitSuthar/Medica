@@ -8,6 +8,7 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign=Theme.of(context).textTheme;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -20,8 +21,7 @@ class IntroScreen extends StatelessWidget {
                 MyMedicaAssets.icons.doctor.image(fit: BoxFit.fill),
                 Text(
                   "Medica! 👋",
-                  style: Theme.of(context)
-                      .textTheme
+                  style: textDesign
                       .headlineLarge!
                       .copyWith(color: myColorsExtension.primary,fontSize: 31.sp),
                 ),
@@ -30,8 +30,7 @@ class IntroScreen extends StatelessWidget {
                   child: Text(
                     "The best online doctor appointment & consultation app of the century for your health and medical needs!",
                     textAlign: TextAlign.center,
-                    style: Theme.of(context)
-                        .textTheme
+                    style: textDesign
                         .titleMedium!
                         .copyWith(fontWeight: FontWeight.w500,color: myColorsExtension.greyColor),
                   ),

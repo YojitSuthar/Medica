@@ -9,6 +9,8 @@ class DoctorSpeciality extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return Scaffold(
       appBar: AppBar(
         leading: const BackIconButton(),
@@ -17,7 +19,7 @@ class DoctorSpeciality extends StatelessWidget {
         titleSpacing: 5,
         title: DesignText(
             text: "Doctor Speciality",
-            style: Theme.of(context).textTheme.displaySmall!,
+            style: textDesign.displaySmall!,
             padding: 0),
         actions: [
           IcnButton(onPressed: () {}, iconAsset: MyMedicaAssets.icons.moreBlack.image())

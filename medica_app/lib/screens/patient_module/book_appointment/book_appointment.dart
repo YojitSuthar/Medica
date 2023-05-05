@@ -25,6 +25,8 @@ class BookAppointment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return Scaffold(
       appBar: const WidgetAppBar(
         title: "Book Appointment",
@@ -38,7 +40,7 @@ class BookAppointment extends StatelessWidget {
               children: [
                 Text(
                   'Make Appointment',
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: textDesign.titleMedium,
                 ),
                 Consumer<PickDateProvider>(
                   builder: (context, value, child) {
@@ -57,12 +59,12 @@ class BookAppointment extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                         dayTextStyle: TextStyle(
-                          color: Colors.grey,
+                          color: myColorsExtension.greyColor,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         monthTextStyle: TextStyle(
-                          color: Colors.grey,
+                          color: myColorsExtension.greyColor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                         ),
@@ -75,7 +77,7 @@ class BookAppointment extends StatelessWidget {
                 ),
                 Text(
                   'Select Hour',
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: textDesign.titleMedium,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20).r,

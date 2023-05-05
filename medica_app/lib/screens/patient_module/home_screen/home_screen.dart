@@ -22,6 +22,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -51,8 +53,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           "Good morning 👋",
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .titleMedium!
                               .copyWith(
                                   color: myColorsExtension.greyColor,
@@ -60,8 +61,7 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           "Andrew Ashely",
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .titleLarge!
                               .copyWith(fontSize: 15.sp),
                         )
@@ -195,31 +195,57 @@ class HomePage extends StatelessWidget {
                         itemCount: doctorSpeciality.length,
                         gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          mainAxisSpacing: 1,
-                          crossAxisSpacing: 35,
-                          childAspectRatio: 0.55,
-                        ),
-                        itemBuilder: (BuildContext context, int index) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundColor: myColorsExtension.secondary,
-                                child: Image.asset(
-                                  doctorSpeciality[index]["icon"].toString(),
-                                  color: myColorsExtension.primary,
-                                  height: 28.h,
-                                ),
-                              ),
-                              Center(
-                                child: DesignText(
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 1,
+                      crossAxisSpacing: 35,
+                      childAspectRatio: 0.55,
+                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 40,
+                            backgroundColor: myColorsExtension.secondary,
+                            child: Image.asset(
+                              doctorSpeciality[index]["icon"].toString(),
+                              color: myColorsExtension.primary,
+                              height: 28.h,
+                            ),
+                          ),
+                          Center(
+                            child: DesignText(
+                              style: textDesign
+                                  .titleMedium!
+                                  .copyWith(
                                       fontWeight: FontWeight.w600,
+                                      fontSize: 15.sp),
+                              text: doctorSpeciality[index]["label"].toString(),
+                              padding: 5,
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      DesignText(
+                          style: textDesign
+                              .titleMedium!
+                              .copyWith(
+                                  fontWeight: FontWeight.w600, fontSize: 18.sp),
+                          text: "Top Doctors",
+                          padding: 10),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/TopDoctorScreen");
+                        },
+                        child: DesignText(
+                            style: textDesign
+                                .titleMedium!
+                                .copyWith(
                                       fontSize: 13.sp),
                                   text: doctorSpeciality[index]["label"].toString(),
                                   padding: 5,
@@ -371,6 +397,8 @@ class SliderData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -386,7 +414,7 @@ class SliderData extends StatelessWidget {
           margin: EdgeInsets.only(top: 10.r),
           child: Text(
             "Check you health Condition regularly to minimize the incidence of the disease in future.",
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+            style: textDesign.titleSmall?.copyWith(
                 fontSize: 14.sp, color: myColorsExtension.secondary),
           ),
         ),
@@ -400,7 +428,7 @@ class SliderData extends StatelessWidget {
             onPressed: () {},
             child: Text(
               "Check Now",
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              style: textDesign.bodyLarge!.copyWith(
                   fontWeight: FontWeight.w700,
                   color: myColorsExtension.onPrimary),
             ),

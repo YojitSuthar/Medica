@@ -20,6 +20,8 @@ class DoctorProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     Future<void> share() async {
       await FlutterShare.share(
           title: 'Example share',
@@ -138,16 +140,16 @@ class DoctorProfile extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
-                              children: const [
+                              children:  [
                                 Icon(
                                   Icons.star,
-                                  color: Colors.white,
+                                  color: myColorsExtension.whiteColor,
                                   size: 22,
                                 ),
                                 Text(
                                   ' 5 ',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: myColorsExtension.whiteColor,
                                   ),
                                 )
                               ],

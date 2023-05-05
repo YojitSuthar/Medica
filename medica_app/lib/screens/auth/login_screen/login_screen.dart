@@ -73,9 +73,6 @@ class LoginScreen extends StatelessWidget {
                       onPressed: () {
                         if (emailCtrl.text.contains("@medicadoctor.com")) {
                           Get.offAllNamed("/UserFillProfile");
-                        } else if (emailCtrl.text
-                            .contains("@medicaadmin.com")) {
-                          Get.offAllNamed("/AdminScreen");
                         } else {
                           Get.offAllNamed("/UserFillProfile");
                         }
@@ -92,9 +89,8 @@ class LoginScreen extends StatelessWidget {
                       child: RichTxt(
                         text_1: 'Don\'t have an account? ',
                         text_2: ' Sign up',
-                        style_1: Theme.of(context).textTheme.titleMedium!.copyWith(color: myColorsExtension.greyColor),
-                        style_2: Theme.of(context)
-                            .textTheme
+                        style_1: textDesign.titleMedium!.copyWith(color: myColorsExtension.greyColor),
+                        style_2: textDesign
                             .titleMedium!
                             .copyWith(
                                 color: myColorsExtension.font_blue,

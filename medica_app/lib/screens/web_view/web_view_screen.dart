@@ -2,6 +2,8 @@ import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:medica_app/resources/import_resources.dart';
 
+import '../../provider/provider.dart';
+
 class WebView extends StatefulWidget {
   WebView({super.key, required this.title, required this.url});
 
@@ -13,17 +15,22 @@ class WebView extends StatefulWidget {
 }
 
 class _WebViewState extends State<WebView> {
-  int loading = 0;
+  bool loading = false;
 
   final WebViewController controller = WebViewController();
 
-  void load() {
+  void load(BuildContext context) {
+    final button = Provider.of<WebViewLoading>(context, listen: false);
+
     controller
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {
             print(progress);
-            loading = progress;
+
+            if (progress == 100) {
+              loading=button.change(loading);
+            }
           },
           onPageStarted: (String url) {},
           onPageFinished: (String url) {},
@@ -34,8 +41,8 @@ class _WebViewState extends State<WebView> {
 
   @override
   void initState() {
-    // TODO: implement initState
-    load();
+    super.initState();
+    load(context);
   }
 
   @override
@@ -44,15 +51,19 @@ class _WebViewState extends State<WebView> {
         appBar: WidgetAppBar(
           title: widget.title,
         ),
-        body: WebViewWidget(
-          controller: controller,
-        )
-      /*: Center(
-              child: SpinKitWave(
-                color: myColorsExtension.onPrimary,
-                size: 50.0,
-              ),
-            ),*/
-    );
+        body: Consumer<WebViewLoading>(
+          builder: (context, value, child) {
+            return loading
+                ? WebViewWidget(
+                    controller: controller,
+                  )
+                : Center(
+                    child: SpinKitWave(
+                      color: myColorsExtension.onPrimary,
+                      size: 50.0,
+                    ),
+                  );
+          },
+        ));
   }
 }

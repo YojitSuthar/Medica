@@ -9,6 +9,8 @@ class PatientDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     var items = ['Male', 'Female'];
 
     String dropDownValue = 'Select Gender';
