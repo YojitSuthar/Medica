@@ -19,6 +19,8 @@ class SocialScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -36,7 +38,7 @@ class SocialScreen extends StatelessWidget {
                       MyMedicaAssets.images.socialImage.image(height: 200.h),
                       Text(
                         "Let's you in",
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25.sp,fontWeight: FontWeight.bold),
+                        style: textDesign.titleLarge?.copyWith(fontSize: 25.sp,fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -89,9 +91,8 @@ class SocialScreen extends StatelessWidget {
                     child: RichTxt(
                       text_1: 'Don\'t have an account?',
                       text_2: ' Sign up',
-                      style_1: Theme.of(context).textTheme.titleMedium!.copyWith(color: myColorsExtension.greyColor),
-                      style_2: Theme.of(context)
-                          .textTheme
+                      style_1: textDesign.titleMedium!.copyWith(color: myColorsExtension.greyColor),
+                      style_2: textDesign
                           .titleMedium!
                           .copyWith(color: myColorsExtension.font_blue,fontWeight: FontWeight.bold),
                       onPress: () {

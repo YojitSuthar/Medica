@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class WebViewLoading extends ChangeNotifier{
-  bool loading=false;
-
-  void change(int value){
+  bool change(bool loading){
     loading=true;
+    notifyListeners();
+    return loading;
   }
 }

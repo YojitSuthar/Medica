@@ -36,9 +36,10 @@ class ReviewScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      radius: 30,backgroundImage: AssetImage(
-                      DoctorData.reviewOfPatient[index]['Image'],
-                    ),
+                      radius: 30,
+                      backgroundImage: AssetImage(
+                        DoctorData.reviewOfPatient[index]['Image'],
+                      ),
                     ),
                     SizedBox(
                       width: 10.w,
@@ -54,7 +55,7 @@ class ReviewScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 6.0, bottom: 6).r,
                           child: Text(
                             DoctorData.reviewOfPatient[index]['Date'],
-                            style:  Theme.of(context).textTheme.labelLarge,
+                            style: Theme.of(context).textTheme.labelLarge,
                           ),
                         ),
                         Text(
@@ -71,38 +72,40 @@ class ReviewScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.star,
-                              color: Colors.white,
+                              color: myColorsExtension.whiteColor,
                               size: 22,
                             ),
                             index == 5
-                                ?  const Text(
-                              ' 4 ',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            )
+                                ? Text(
+                                    ' 4 ',
+                                    style: TextStyle(
+                                      color: myColorsExtension.whiteColor,
+                                    ),
+                                  )
                                 : index == 3
-                                ?  const Text(
-                              ' 2 ',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            )
-                                : index.isOdd
-                                ?  const Text(
-                              ' 5 ',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            )
-                                :  const Text(
-                              ' 3 ',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
+                                    ? Text(
+                                        ' 2 ',
+                                        style: TextStyle(
+                                          color: myColorsExtension.whiteColor,
+                                        ),
+                                      )
+                                    : index.isOdd
+                                        ? Text(
+                                            ' 5 ',
+                                            style: TextStyle(
+                                              color:
+                                                  myColorsExtension.whiteColor,
+                                            ),
+                                          )
+                                        : Text(
+                                            ' 3 ',
+                                            style: TextStyle(
+                                              color:
+                                                  myColorsExtension.whiteColor,
+                                            ),
+                                          ),
                           ],
                         ),
                       ),

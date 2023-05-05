@@ -35,6 +35,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -64,8 +66,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Text(
                           "Good morning 👋",
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .titleMedium!
                               .copyWith(
                                   color: myColorsExtension.greyColor,
@@ -73,8 +74,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           "Andrew Ashely",
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .titleLarge!
                               .copyWith(fontSize: 15.sp),
                         )
@@ -173,8 +173,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       DesignText(
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .titleMedium!
                               .copyWith(
                                   fontWeight: FontWeight.w600, fontSize: 17.sp),
@@ -185,8 +184,7 @@ class _HomePageState extends State<HomePage> {
                           Get.toNamed("/DoctorSpeciality");
                         },
                         child: DesignText(
-                            style: Theme.of(context)
-                                .textTheme
+                            style: textDesign
                                 .titleMedium!
                                 .copyWith(
                                     fontWeight: FontWeight.w600,
@@ -226,8 +224,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Center(
                             child: DesignText(
-                              style: Theme.of(context)
-                                  .textTheme
+                              style: textDesign
                                   .titleMedium!
                                   .copyWith(
                                       fontWeight: FontWeight.w600,
@@ -244,8 +241,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       DesignText(
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .titleMedium!
                               .copyWith(
                                   fontWeight: FontWeight.w600, fontSize: 18.sp),
@@ -256,8 +252,7 @@ class _HomePageState extends State<HomePage> {
                           Get.toNamed("/TopDoctorScreen");
                         },
                         child: DesignText(
-                            style: Theme.of(context)
-                                .textTheme
+                            style: textDesign
                                 .titleMedium!
                                 .copyWith(
                                     fontWeight: FontWeight.w600,
@@ -318,8 +313,7 @@ class _HomePageState extends State<HomePage> {
                                     width: 120.w,
                                     child: Center(
                                       child: DesignText(
-                                          style: Theme.of(context)
-                                              .textTheme
+                                          style: textDesign
                                               .titleMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.w600,
@@ -331,8 +325,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   DesignText(
-                                      style: Theme.of(context)
-                                          .textTheme
+                                      style: textDesign
                                           .titleMedium!
                                           .copyWith(
                                               fontWeight: FontWeight.w600,
@@ -395,6 +388,8 @@ class SliderData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -410,7 +405,7 @@ class SliderData extends StatelessWidget {
           margin: EdgeInsets.only(top: 10.r),
           child: Text(
             "Check you health Condition regularly to minimize the incidence of the disease in future.",
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+            style: textDesign.bodyLarge?.copyWith(
                 fontSize: 14.sp, color: myColorsExtension.secondary),
           ),
         ),
@@ -424,7 +419,7 @@ class SliderData extends StatelessWidget {
             onPressed: () {},
             child: Text(
               "Check Now",
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              style: textDesign.bodyLarge!.copyWith(
                   fontWeight: FontWeight.w700,
                   color: myColorsExtension.onPrimary),
             ),

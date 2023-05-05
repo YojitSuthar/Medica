@@ -30,6 +30,8 @@ class _BookAppointmentState extends State<BookAppointment> {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
+
     return Scaffold(
       appBar: const WidgetAppBar(
         title: "Book Appointment",
@@ -43,7 +45,7 @@ class _BookAppointmentState extends State<BookAppointment> {
               children: [
                 Text(
                   'Make Appointment',
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: textDesign.titleMedium,
                 ),
                 Consumer<PickDateProvider>(
                   builder: (context, value, child) {
@@ -62,12 +64,12 @@ class _BookAppointmentState extends State<BookAppointment> {
                           fontWeight: FontWeight.w600,
                         ),
                         dayTextStyle: TextStyle(
-                          color: Colors.grey,
+                          color: myColorsExtension.greyColor,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         monthTextStyle: TextStyle(
-                          color: Colors.grey,
+                          color: myColorsExtension.greyColor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                         ),
@@ -80,7 +82,7 @@ class _BookAppointmentState extends State<BookAppointment> {
                 ),
                 Text(
                   'Select Hour',
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: textDesign.titleMedium,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20).r,
@@ -115,8 +117,7 @@ class _BookAppointmentState extends State<BookAppointment> {
                           child: Center(
                             child: Text(
                               hourList[index],
-                              style: Theme.of(context)
-                                  .textTheme
+                              style: textDesign
                                   .labelLarge!
                                   .copyWith(
                                     color: currentIndex == index

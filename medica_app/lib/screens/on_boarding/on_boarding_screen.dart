@@ -10,6 +10,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign=Theme.of(context).textTheme;
     final button = Provider.of<ButtonProvider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
@@ -25,7 +26,7 @@ class OnBoardingScreen extends StatelessWidget {
                   },
                   child: Text(
                     'SKIP',
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    style: textDesign.titleSmall?.copyWith(
                           color: myColorsExtension.primary,
                           fontWeight: FontWeight.w600,
                         ),
@@ -46,8 +47,7 @@ class OnBoardingScreen extends StatelessWidget {
                         Text(
                           "Thousands of doctors & experts to help your health! ",
                           textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .headlineSmall
                               ?.copyWith(
                                 color: myColorsExtension.primary,
@@ -63,8 +63,7 @@ class OnBoardingScreen extends StatelessWidget {
                         Text(
                           "Health checks & consultations easily anywhere anytime",
                           textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .headlineMedium!
                               .copyWith(
                                 color: myColorsExtension.primary,
@@ -80,8 +79,7 @@ class OnBoardingScreen extends StatelessWidget {
                         Text(
                           "Let's start living healthy and well with us right now !",
                           textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .textTheme
+                          style: textDesign
                               .headlineMedium!
                               .copyWith(
                                 color: myColorsExtension.primary,

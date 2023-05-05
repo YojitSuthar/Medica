@@ -4,7 +4,6 @@ import 'import_resources.dart';
 
 final List<GetPage<dynamic>> routes = [
   GetPage(name: "/SplashScreen", page: () => const SplashScreen()),
-  // GetPage(name: "/AdminScreen", page: () => const AdminScreen()),
   GetPage(
       name: "/IntroScreen",
       page: () => const IntroScreen(),
@@ -43,9 +42,4 @@ final List<GetPage<dynamic>> routes = [
       transitionDuration: const Duration(milliseconds: 350)),
   GetPage(name: "/BookAppointment", page: () =>  const BookAppointment()),
   GetPage(name: "/PatientDetail", page: () =>  const PatientDetail()),
-  /*GetPage(
-      name: "/WebView",
-      page: () => WebView(),
-      transition: Transition.fade,
-      transitionDuration: const Duration(milliseconds: 350)),*/
 ];

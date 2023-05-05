@@ -8,6 +8,7 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textDesign = Theme.of(context).textTheme;
     return Scaffold(
       appBar: WidgetAppBar(
         title: "Notifications",
@@ -52,15 +53,13 @@ class NotificationScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   DesignText(
-                                      style: Theme.of(context)
-                                          .textTheme
+                                      style: textDesign
                                           .headlineSmall!
                                           .copyWith(fontSize: 18.sp),
                                       text: "Appointment Success!",
                                       padding: 0),
                                   DesignText(
-                                      style: Theme.of(context)
-                                          .textTheme
+                                      style: textDesign
                                           .titleMedium!
                                           .copyWith(
                                               fontSize: 12.sp,
@@ -77,8 +76,7 @@ class NotificationScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "You have successfully booked an appointment with Dr. Alan watson on December 24, 2024 ,10.00 am. Don't to activate your remainder ",
-                            style: Theme.of(context)
-                                .textTheme
+                            style: textDesign
                                 .bodyLarge!
                                 .copyWith(color: myColorsExtension.greyColor),
                           ),
