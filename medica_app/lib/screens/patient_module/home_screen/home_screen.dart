@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                   CircleAvatar(
                     radius: 25,
                     backgroundImage:
-                        AssetImage(MyMedicaAssets.images.profile.keyName),
+                    AssetImage(MyMedicaAssets.images.profile.keyName),
                   ),
                   Container(
                     height: 40.h,
@@ -55,8 +55,8 @@ class HomePage extends StatelessWidget {
                               .textTheme
                               .titleMedium!
                               .copyWith(
-                                  color: myColorsExtension.greyColor,
-                                  fontWeight: FontWeight.w500),
+                              color: myColorsExtension.greyColor,
+                              fontWeight: FontWeight.w500),
                         ),
                         Text(
                           "Andrew Ashely",
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                       Get.toNamed("/NotificationScreen");
                     },
                     iconAsset:
-                        MyMedicaAssets.icons.notification.image(height: 21.h)),
+                    MyMedicaAssets.icons.notification.image(height: 21.h)),
                 IcnButton(
                     onPressed: () {
                       Get.toNamed("/WishListScreen");
@@ -307,10 +307,10 @@ class HomePage extends StatelessWidget {
                                                     .toString()),
                                                 fit: BoxFit.cover),
                                             borderRadius: BorderRadius.only(
-                                                    topLeft:
-                                                        const Radius.circular(8).w,
-                                                    topRight:
-                                                        const Radius.circular(8).w)
+                                                topLeft:
+                                                const Radius.circular(8).w,
+                                                topRight:
+                                                const Radius.circular(8).w)
                                                 .r),
                                       ),
                                       SizedBox(
@@ -321,10 +321,10 @@ class HomePage extends StatelessWidget {
                                                   .textTheme
                                                   .titleMedium!
                                                   .copyWith(
-                                                      fontWeight: FontWeight.w600,
-                                                      fontSize: 13.sp),
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 13.sp),
                                               text: DoctorData.topDoctor[index]
-                                                      ["Name"]
+                                              ["Name"]
                                                   .toString(),
                                               padding: 5),
                                         ),
@@ -334,12 +334,12 @@ class HomePage extends StatelessWidget {
                                               .textTheme
                                               .titleMedium!
                                               .copyWith(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 11.sp,
-                                                  color:
-                                                      myColorsExtension.greyColor),
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 11.sp,
+                                              color:
+                                              myColorsExtension.greyColor),
                                           text: DoctorData.topDoctor[index]
-                                                  ["Special"]
+                                          ["Special"]
                                               .toString(),
                                           padding: 0),
                                     ],
