@@ -19,15 +19,14 @@ class _WebViewState extends State<WebView> {
 
   final WebViewController controller = WebViewController();
 
-  void load(BuildContext context) {
+
+  void load() {
     final button = Provider.of<WebViewLoading>(context, listen: false);
 
     controller
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {
-            print(progress);
-
             if (progress == 100) {
               loading=button.change(loading);
             }
@@ -42,7 +41,7 @@ class _WebViewState extends State<WebView> {
   @override
   void initState() {
     super.initState();
-    load(context);
+    load();
   }
 
   @override
