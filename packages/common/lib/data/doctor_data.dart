@@ -105,4 +105,16 @@ class DoctorData{
       'feedback' : 'omg, this is amazing',
     },
   ];
+
+  static List<Map<String, dynamic>> doctorSpeciality = [
+    {"label": "General", "icon": MyMedicaAssets.icons.people.keyName},
+    {"label": "Dentist", "icon": MyMedicaAssets.icons.tooth.keyName},
+    {"label": "Ophthalmologist", "icon": MyMedicaAssets.icons.eye.keyName},
+    {"label": "Nutrition", "icon": MyMedicaAssets.icons.healthyFood.keyName},
+    {"label": "Neurologist", "icon": MyMedicaAssets.icons.brain.keyName},
+    {"label": "Pediatric", "icon": MyMedicaAssets.icons.family.keyName},
+    {"label": "Radiologist", "icon": MyMedicaAssets.icons.joint.keyName},
+    {"label": "anesthesiology", "icon": MyMedicaAssets.icons.anesthesia.keyName},
+  ];
+
 }

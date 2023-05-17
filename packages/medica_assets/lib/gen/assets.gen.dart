@@ -12,6 +12,10 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/anesthesia.png
+  AssetGenImage get anesthesia =>
+      const AssetGenImage('assets/icons/anesthesia.png');
+
   /// File path: assets/icons/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/icons/apple.png');
 
@@ -148,6 +152,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        anesthesia,
         apple,
         brain,
         calendar,
@@ -201,6 +206,10 @@ class $AssetsImagesGen {
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.jpg');
 
+  /// File path: assets/images/boarding_3.jpeg
+  AssetGenImage get boarding3 =>
+      const AssetGenImage('assets/images/boarding_3.jpeg');
+
   /// File path: assets/images/boardingimg_1.png
   AssetGenImage get boardingimg1 =>
       const AssetGenImage('assets/images/boardingimg_1.png');
@@ -208,10 +217,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/boardingimg_2.png
   AssetGenImage get boardingimg2 =>
       const AssetGenImage('assets/images/boardingimg_2.png');
-
-  /// File path: assets/images/boardingimg_3.png
-  AssetGenImage get boardingimg3 =>
-      const AssetGenImage('assets/images/boarding_3.jpeg');
 
   /// File path: assets/images/company-logo.png
   AssetGenImage get companyLogo =>
@@ -283,9 +288,9 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         appointmentBook,
         background,
+        boarding3,
         boardingimg1,
         boardingimg2,
-        boardingimg3,
         companyLogo,
         doctor1,
         doctor2,

@@ -9,17 +9,6 @@ class HomePage extends StatelessWidget {
 
   final PageController controller = PageController();
 
-  List<Map<String, dynamic>> doctorSpeciality = [
-    {"label": "General", "icon": MyMedicaAssets.icons.people.keyName},
-    {"label": "Dentist", "icon": MyMedicaAssets.icons.tooth.keyName},
-    {"label": "Ophthalmologist", "icon": MyMedicaAssets.icons.eye.keyName},
-    {"label": "Nutrition", "icon": MyMedicaAssets.icons.healthyFood.keyName},
-    {"label": "Neurologist", "icon": MyMedicaAssets.icons.brain.keyName},
-    {"label": "Pediatric", "icon": MyMedicaAssets.icons.family.keyName},
-    {"label": "Radiologist", "icon": MyMedicaAssets.icons.joint.keyName},
-    {"label": "More", "icon": MyMedicaAssets.icons.more.keyName},
-  ];
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -116,7 +105,7 @@ class HomePage extends StatelessWidget {
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 15).w,
-                        height: 160.h,
+                        height: 165.h,
                         padding: EdgeInsets.all(15.w),
                         decoration: BoxDecoration(
                             color: myColorsExtension.greyColor,
@@ -192,7 +181,7 @@ class HomePage extends StatelessWidget {
                       GridView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: doctorSpeciality.length,
+                        itemCount:DoctorData.doctorSpeciality.length,
                         gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 4,
@@ -208,7 +197,7 @@ class HomePage extends StatelessWidget {
                                 radius: 40,
                                 backgroundColor: myColorsExtension.secondary,
                                 child: Image.asset(
-                                  doctorSpeciality[index]["icon"].toString(),
+                                  DoctorData.doctorSpeciality[index]["icon"].toString(),
                                   color: myColorsExtension.primary,
                                   height: 28.h,
                                 ),
@@ -221,7 +210,7 @@ class HomePage extends StatelessWidget {
                                       .copyWith(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 13.sp),
-                                  text: doctorSpeciality[index]["label"].toString(),
+                                  text: DoctorData.doctorSpeciality[index]["label"].toString(),
                                   padding: 5,
                                 ),
                               ),
@@ -387,20 +376,21 @@ class SliderData extends StatelessWidget {
           child: Text(
             "Check you health Condition regularly to minimize the incidence of the disease in future.",
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                fontSize: 14.sp, color: myColorsExtension.secondary),
+                fontSize: 12.sp, color: myColorsExtension.secondary),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8),
           child: BlueButton(
-            height: 25.h,
-            width: 85.w,
-            backgroundColor: myColorsExtension.secondary,
+            height: 15.h,
+            width:90.w,
+            backgroundColor: myColorsExtension.whiteColor,
             borderRadius: 10,
             onPressed: () {},
             child: Text(
               "Check Now",
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontSize: 12.sp,
                   fontWeight: FontWeight.w700,
                   color: myColorsExtension.onPrimary),
             ),

@@ -76,7 +76,7 @@ class OnBoardingScreen extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        MyMedicaAssets.images.boardingimg3.image(height: 250.h),
+                        MyMedicaAssets.images.boarding3.image(height: 250.h),
                         Text(
                           "Let's start living healthy and well with us right now !",
                           textAlign: TextAlign.center,

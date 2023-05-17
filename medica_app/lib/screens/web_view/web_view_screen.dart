@@ -22,7 +22,6 @@ class _WebViewState extends State<WebView> {
 
   void load() {
     final button = Provider.of<WebViewLoading>(context, listen: false);
-
     controller
       ..setNavigationDelegate(
         NavigationDelegate(

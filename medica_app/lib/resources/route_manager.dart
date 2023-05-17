@@ -42,5 +42,6 @@ final List<GetPage<dynamic>> routes = [
       transitionDuration: const Duration(milliseconds: 350)),
   GetPage(name: "/BookAppointment", page: () =>  BookAppointment()),
   GetPage(name: "/PatientDetail", page: () =>  const PatientDetail()),
-  GetPage(name: '/BottomNavigation', page: () => const BottomNavigationScreen())
+  GetPage(name: '/BottomNavigation', page: () => const BottomNavigationScreen()),
+  GetPage(name: '/DoctorSpeciality', page: () => const DoctorSpeciality())
 ];

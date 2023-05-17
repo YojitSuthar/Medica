@@ -57,7 +57,7 @@ class UserFillProfile extends StatelessWidget {
                         backgroundColor: myColorsExtension.secondary,
                         child: Container(
                           padding: const EdgeInsets.all(20),
-                          child: MyMedicaAssets.icons.mailInboxApp.image(),
+                          child: MyMedicaAssets.icons.user.image(),
                         ),
                       ),
                       Positioned(
